@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chimbotwe Mattress Store</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(to right, #0b3d0b, #003300);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-title img {
+      width: 60px;
+      height: 45px;
+    }
+
+    .logo-title h1 {
+      font-size: 2rem;
+      color: gold;
+    }
+
+    .sidebar {
+      width: 50%;
+      padding-right: 15px;
+    }
+
+    .ad-slideshow {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .ad-slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+    }
+
+    .ad-slide.active {
+      opacity: 1;
+    }
+    
+    .hero-banner {
+      width: 120%;
+      height: auto;
+    }
+
+    .hero-banner img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      max-height: 400px;
+    }
+    .main-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 1rem;
+      gap: 1rem;
+    }
+
+    .sidebar {
+      flex: 0 0 20%;
+      background: #f8f8f8;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .sidebar h3 {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      color: #003300;
+    }
+
+    .sidebar img {
+      width: 100%;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+    }
+
+    .product-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .product-card img.main-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+    }
+
+    .thumbs {
+      display: flex;
+      justify-content: center;
+      gap: 0.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .thumbs img {
+      width: 48px;
+      height: 48px;
+      border-radius: 4px;
+      cursor: pointer;
+      object-fit: cover;
+      transition: transform 0.2s;
+    }
+
+    .thumbs img:hover {
+      transform: scale(1.1);
+    }
+
+    h4 {
+      margin: 0.5rem 0 0.3rem;
+      font-size: 1rem;
+    }
+
+    .price {
+      font-weight: bold;
+      color: darkgreen;
+      margin: 0.2rem 0;
+    }
+
+    .location {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .discount {
+      color: red;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      background: linear-gradient(to right, #0b3d0b, #003300);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    .trademark {
+      font-size: 0.6em;
+      vertical-align: super;
+      margin-left: 2px;
+    }
+
+    .contact-icons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 100;
+    }
+
+    .contact-icons img {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar { display: none; }
+      .product-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+    }
+
+    @media (max-width: 480px) {
+      .logo-title h1 { font-size: 1.5rem; }
+      .ad-slide img { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-title">
+      <img src="Frog.png" alt="Logo" />
+      <h1>Chimbotwe Mattreses & General Dealers&reg</h1>
+    </div>
+   <div class="ad-slideshow">
+        <img src="chimbotwe.jpeg" class="ad-slide active" alt="Ad Slide 1" />
+        <img src="Manal.jpeg" class="ad-slide" alt="Ad Slide 2" />
+<img src="Promo1.jpeg" class="ad-slide" alt="Ad Slide 3" />
+      </div>
+<section class="hero-banner">
+  <img src="CHIMGeneralDealers.jpeg" alt="Hero Banner">
+</section>
+
+  </header>
+
+  <div class="main-wrapper">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Promotions</h3>
+      <img src="PromoImage.jpeg" alt="Promo 1" />
+      <img src="Promoimage2.jpeg" alt="Promo 2" />
+      <img src="chimbotwe.jpeg" alt="Promo 3" />
+      <img src="longChimUrest.jpeg" alt="Promo 4" />
+    </aside>
+
+    <!-- Product Grid -->
+    <div class="product-grid">
+     <!-- Premium Mattress 1 -->
+<div class="product-card">
+  <img class="main-img" id="main-1" src="manallady.jpeg" alt="Mattress 1">
+  <div class="thumbs">
+    <img src="manal-m1.jpeg" onclick="document.getElementById('main-1').src='manal-m1.jpeg'">
+    <img src="manal-m2.jpeg" onclick="document.getElementById('main-1').src='manal-m2.jpeg'">
+    <img src="manallady.jpeg" onclick="document.getElementById('main-1').src='manallady.jpeg'">
+  </div>
+  <h4>Manal Quilted Bases king Size </h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 12,500</p>
+</div>
+
+<!-- Premium Mattress 2 -->
+<div class="product-card">
+  <img class="main-img" id="main-2" src="Optmattress.jpeg" alt="Mattress 2">
+  <div class="thumbs">
+    <img src="Optbed2.jpeg" onclick="document.getElementById('main-2').src='Optbed2.jpeg'">
+    <img src="Optmattress.jpeg" onclick="document.getElementById('main-2').src='Optmattress.jpeg'">
+    
+  </div>
+  <h4>Manal Dunlop Queen Size mattress</h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 2740</p>
+</div>
+
+<!-- Premium Mattress 3 to 20 -->
+<!-- Use this pattern and change only the numbers and image links -->
+
+<!-- Example for Mattress 3 -->
+<div class="product-card">
+  <img class="main-img" id="main-3" src="ManalPromo.jpeg" alt="Mattress 3">
+  <div class="thumbs">
+    <img src="whitebed.jpeg" onclick="document.getElementById('main-3').src='whitebed.jpeg'">
+    <img src="ManalPromo.jpeg" onclick="document.getElementById('main-3').src='ManalPromo.jpeg'">
+   
+  </div>
+  <h4>Spring Mattress BD</h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 13,000</p>
+</div>
+
+<!-- Continue from Mattress 4 to 20 -->
+<!-- Below is the simplified version, just change the ID number and image URLs -->
+
+<!-- Mattress 4 -->
+<div class="product-card">
+  <img class="main-img" id="main-4" src="mattress3.jpeg" alt="Mattress 4">
+  <div class="thumbs">
+    <img src="ManalKSB.jpeg" onclick="document.getElementById('main-4').src='ManalKSB.jpeg'">
+    <img src="mattress3.jpeg" onclick="document.getElementById('main-4').src='mattress3.jpeg'">
+    
+  </div>
+  <h4>Manal , King Size </h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 15,000</p>
+</div>
+
+<!-- Mattress 5 -->
+<div class="product-card">
+  <img class="main-img" id="main-5" src="RedMattress1.1.jpeg" alt="Mattress 5">
+  <div class="thumbs">
+    <img src="Greenmattress1.2.jpeg" onclick="document.getElementById('main-5').src='Greenmattress1.2.jpeg'">
+    <img src="RedMattress1.1.jpeg" onclick="document.getElementById('main-5').src='RedMattress1.1.jpeg'">
+    
+  </div>
+  <h4>Urest 8inch Set</h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 3,100</p>
+</div>
+
+<!-- Continue up to 20 -->
+
+<!-- Mattress 6 to 20 (Repeat structure) -->
+<!-- Update 'main-6' to 'main-20' accordingly and insert your real image URLs -->
+
+<!-- Final Example for Mattress 20 -->
+<div class="product-card">
+  <img class="main-img" id="main-6" src="Urest6inch.jpeg" alt="Mattress 6">
+  <div class="thumbs">
+    <img src="Greenmattress1.2.jpeg" onclick="document.getElementById('main-6').src='Greenmattress1.2.jpeg'">
+    <img src="Urest6inch.jpeg" onclick="document.getElementById('main-6').src='Urest6inch.jpeg'">
+   
+  </div>
+  <h4>Urest 6 inch Set</h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 2,850</p>
+</div>
+<!-- Premium Mattress 7 -->
+<div class="product-card">
+  <img class="main-img" id="main-7" src="Urestm-2.jpeg" alt="Mattress 7">
+  <div class="thumbs">
+    <img src="Urestm-2.jpeg" onclick="document.getElementById('main-7').src='Urestm-2.jpeg'">
+  <img src="GreyBed.jpeg" onclick="document.getElementById('main-7').src='GreyBed.jpeg'">
+  </div>
+  <h4>Classic comfort matress & bed
+Double bed</h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 7,500</p>
+</div>
+
+<!-- Premium Mattress 8 -->
+<div class="product-card">
+  <img class="main-img" id="main-8" src="UrestKS.jpeg" alt="Mattress 8">
+  <div class="thumbs">
+    <img src="kingsize.jpeg" onclick="document.getElementById('main-8').src='kingsize.jpeg'">
+    <img src="UrestKS.jpeg" onclick="document.getElementById('main-8').src='UrestKS.jpeg'">
+    
+  </div>
+  <h4>Urest Quilted Mattress & Bed</h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 6,500</p>
+</div>
+
+<!-- Premium Mattress 9 -->
+<div class="product-card">
+  <img class="main-img" id="main-9" src="URestBlue.jpeg" alt="Mattress 9">
+  <div class="thumbs">
+    <img src="UrestGreen.jpeg" onclick="document.getElementById('main-9').src='UrestGreen.jpeg'">
+    <img src="URestBlue.jpeg" onclick="document.getElementById('main-9').src='URestBlue.jpeg'">
+    
+  </div>
+  <h4>Urest king set</h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 6,500</p>
+</div>
+
+<!-- Premium Mattress 10 -->
+<div class="product-card">
+  <img class="main-img" id="main-10" src="Floral.jpeg" alt="Mattress 10">
+  <div class="thumbs">
+ 
+  </div>
+  <h4>Manal 8 inch High Density Bed & Mattress </h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 3,100</p>
+</div>
+
+<!-- Premium Mattress 11 -->
+<div class="product-card">
+  <img class="main-img" id="main-11" src="FoldMattress.jpeg" alt="Mattress 11">
+  <div class="thumbs">
+    
+  </div>
+  <h4>Urest 2inch Camping Matress</h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 550</p>
+</div>
+
+<!-- Premium Mattress 12 -->
+<div class="product-card">
+  <img class="main-img" id="main-12" src="SofaCum.jpeg" alt="Mattress 12">
+  <div class="thumbs">
+    
+  </div>
+  <h4>2in1 Sofa Cum Bed/ Double 6inch</h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 3,100</p>
+</div>
+
+<!-- Premium Mattress 13 -->
+<div class="product-card">
+  <img class="main-img" id="main-13" src="mattress1.jpeg" alt="Mattress 13">
+  <div class="thumbs">
+   
+  </div>
+  <h4>Tusha high density 8inch Mattress</h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 1,250</p>
+</div>
+
+<!-- Premium Mattress 14 -->
+<div class="product-card">
+  <img class="main-img" id="main-14" src="LimeMattress.jpeg" alt="Mattress 14">
+  <div class="thumbs">
+   
+  </div>
+  <h4>Tusha high density 8inch Mattress</h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 900</p>
+</div>
+
+<!-- Premium Mattress 15 -->
+<div class="product-card">
+  <img class="main-img" id="main-15" src="Pillow2.jpeg" alt="Mattress 15">
+  <div class="thumbs">
+    
+  </div>
+  <h4>Manal High Density Continental Pillow</h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 250</p>
+</div>
+
+<!-- Premium Mattress 16 -->
+<div class="product-card">
+  <img class="main-img" id="main-16" src="Pillow4.jpeg" alt="Mattress 16">
+  <div class="thumbs">
+    
+  </div>
+  <h4>Manal Continental Pillow</h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 250</p>
+</div>
+
+<!-- Premium Mattress 17 -->
+<div class="product-card">
+  <img class="main-img" id="main-17" src="Pillow3.jpeg" alt="Mattress 17">
+  <div class="thumbs">
+    
+  </div>
+  <h4>Manal Continental Pillows</h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 250</p>
+</div>
+
+<!-- Premium Mattress 18 -->
+<div class="product-card">
+  <img class="main-img" id="main-18" src="SDPillow.JPG" alt="Mattress 18">
+  <div class="thumbs">
+   
+  </div>
+  <h4>Standard Delux Pillows </h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 250</p>
+</div>
+
+<!-- Premium Mattress 19 -->
+<div class="product-card">
+  <img class="main-img" id="main-19" src="StandardPillow.JPG" alt="Mattress 19">
+  <div class="thumbs">
+   
+  </div>
+  <h4>Standard Pillows </h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 135</p>
+</div>
+
+<!-- Premium Mattress 20 -->
+<div class="product-card">
+  <img class="main-img" id="main-20" src="Redbluepillow.jpeg" alt="Mattress 20">
+  <div class="thumbs">
+   
+  </div>
+  <h4>Medium Quality Pillows </h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 85</p>
+</div>
+
+<!-- Premium Mattress 20 -->
+<div class="product-card">
+  <img class="main-img" id="main-20" src="Petbed1.jpeg" alt="Mattress 20">
+  <div class="thumbs">
+   
+  </div>
+  <h4>Pet Bow</h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 250</p>
+</div>
+
+<!-- Premium Mattress 21 -->
+<div class="product-card">
+  <img class="main-img" id="main-21" src="Petbed2.jpeg" alt="Mattress 21">
+  <div class="thumbs">
+    
+  </div>
+  <h4>Pet Bed large</h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 275</p>
+</div>
+
+<!-- Premium Mattress 22 -->
+<div class="product-card">
+  <img class="main-img" id="main-22" src="basket.jpeg" alt="Mattress 22">
+  <div class="thumbs">
+    <img src="Corneertable.jpeg" onclick="document.getElementById('main-22').src='Corneertable.jpeg'">
+    <img src="basket.jpeg" onclick="document.getElementById('main-22').src='basket.jpeg'">
+    
+  </div>
+  <h4>Eurotop/Pillow Space Top SideTable</h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 580</p>
+</div>
+
+<!-- Premium Mattress 23 -->
+<div class="product-card">
+  <img class="main-img" id="main-23" src="3cushion.jpeg" alt="Mattress 23">
+  <div class="thumbs">
+    <img src="1cushion.jpeg" onclick="document.getElementById('main-23').src='1cushion.jpeg'">
+    <img src="cushion4.jpeg" onclick="document.getElementById('main-23').src='cushion4.jpeg'">
+    <img src="3cushion.jpeg" onclick="document.getElementById('main-23').src='3cushion.jpeg'">
+  </div>
+  <h4>6 inch Cushions</h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 85</p>
+</div>
+
+<!-- Premium Mattress 24 -->
+<div class="product-card">
+  <img class="main-img" id="main-24" src="Bigbed.jpeg" alt="Mattress 24">
+  <div class="thumbs">
+    <img src="Bigbed3.JPG" onclick="document.getElementById('main-24').src='Bigbed3.JPG'">
+    <img src="Bigbed.jpeg" onclick="document.getElementById('main-24').src='Bigbed.jpeg'">
+    
+  </div>
+  <h4> Pillow Top Spring Set</h4>
+  <p class="location">Location: Lusaka</p>
+  <p class="price">Price: ZMW 21,500</p>
+</div>
+
+</div>
+    </div>
+  </div>
+  <!-- Information Section -->
+  <section style="background:#f0f0f0; padding: 2rem; margin-top: 2rem; border-top: 2px solid #003300;">
+    <div style="max-width: 900px; margin: auto; text-align: center;">
+      <h2 style="color: #003300; margin-bottom: 1rem;">About Chimbotwe Business</h2>
+      <p style="font-size: 1rem; color: #333; line-height: 1.6;">
+        Chimbotwe Mattresses & General Dealers is your trusted supplier of premium-quality mattresses,
+        bases, and bedroom sets in Zambia. With a commitment to affordability, comfort, and service excellence,
+        we bring lasting value to your sleep experience and home furnishing needs.
+      </p>
+      <a href="about.html" style="display: inline-block; margin-top: 1rem; background-color: #003300; color: #fff; padding: 0.7rem 1.5rem; text-decoration: none; border-radius: 6px;">Learn More About Us</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+    <footer>
+    <p>Chimbotwe Mattresses&copy;2025.Designed by MD<span class="trademark">™</span>  </p>
+  </footer>
+
+  <!-- Contact Icons -->
+  <div class="contact-icons">
+  <!-- Call Icon -->
+<a href="tel:+260966100125" class="call-icon" title="Call Now">
+  <img src="https://img.icons8.com/fluency/48/phone.png" alt="Call" />
+</a>
+<a href="https://wa.me/+260966100125" target="_blank"><img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="Chat on WhatsApp">
+  </div>
+  <!-- 🔁 Slideshow JavaScript and Footer Logging -->
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".ad-slide");
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove("active");
+      if (i === index) {
+        slide.classList.add("active");
+      }
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  // Auto-slide every 3 seconds
+  setInterval(nextSlide, 3000);
+
+
+    // Example JavaScript functionality
+    window.addEventListener('load', function () {
+      console.log('Trademark footer page loaded successfully.');
+    });
+  </script>
+  </script>
+</body>
+</html>
+
+</body>
+</html>
